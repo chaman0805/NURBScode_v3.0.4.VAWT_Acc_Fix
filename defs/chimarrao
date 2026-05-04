@@ -1,0 +1,9 @@
+DEST    = /home/artem/Research/code_prism/bin
+FCOMP   = mpif90
+#FREE    = -ffree-form  -ffree-line-length-none
+#FLAGS   = -I./obj  -fdefault-real-8 -J./obj -fimplicit-none -O3 -march=native 
+#DFLAGS  = -I./obj  -fdefault-integer-8 -fdefault-real-8 -g -ggdb -fbounds-check -fbacktrace -fimplicit-none 
+FLAGS   = -O3 -g3 -Wno-globals -fbounds-check -fbacktrace -fimplicit-none -ffpe-trap=invalid,zero,overflow,underflow
+LIBS    =  
+METIS   = /opt/local/bin/
+MDFILES = 

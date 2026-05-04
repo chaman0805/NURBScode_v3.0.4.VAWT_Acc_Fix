@@ -1,0 +1,10 @@
+DEST    = $(HOME)/bin
+FCOMP   = mpif90
+FREE    = -free    
+FLAGS   = -r8 -i4  -implicitnone  -fast -heap-arrays 1 -module ./obj
+DFLAGS  = -r8 -i4  -implicitnone        -heap-arrays 1 -module ./obj  -CB  
+LIBS    = -L${MKL_LIB} -llapack 
+METIS   = /home/ido/metis-4.0 
+MDFILES = setbotf.f
+ 
+#DFLAGS  = -r8 -i4  -implicitnone      -CB  -pg  -debug all -p -g -heap-arrays 1 -module ./obj -traceback

@@ -1,0 +1,11 @@
+DEST    = /home/jinhui/Research/freesurface/bin
+FCOMP   = mpif90
+FREE    = -ffree-form  -ffree-line-length-none
+#FLAGS   = -cpp -DUSEMPI  -DUSEFLUSH  -I./obj   -J./obj -fimplicit-none -O3 -march=native -Wconversion -Wuninitialized 
+FLAGS   = -cpp -DUSEMPI  -DUSEFLUSH  -I./obj   -J./obj -fimplicit-none  -march=native -Wconversion -Wuninitialized 
+
+DFLAGS  = -cpp -DUSEMPI  -DUSEFLUSH   -I./obj   -fdefault-real-8 -J./obj -pg -g3 -ggdb -fbounds-check -fbacktrace -fimplicit-none -std=f2003 -pedantic -Wuninitialized -Waliasing -Wconversion -Wall -Wextra -ffpe-trap=invalid,zero,underflow,overflow,denormal -fstack-protector -fall-intrinsics
+LIBS    =
+#LIBS    = /Users/bigmac/src/prism2/eigenmodes/ARPACK/libarpack_Mac.a /Users/bigmac/src/prism2/eigenmodes/lapack/lapack-3.4.0/liblapack.a /Users/bigmac/src/prism2/eigenmodes/lapack/lapack-3.4.0/librefblas.a 
+METIS   = /usr/local/bin/
+MDFILES =   

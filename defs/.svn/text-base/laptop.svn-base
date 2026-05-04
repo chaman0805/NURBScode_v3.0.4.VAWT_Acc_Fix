@@ -1,0 +1,8 @@
+DEST    = $(HOME)/bin
+FCOMP   = openmpif90
+FREE    = -ffree-form  -ffree-line-length-none
+FLAGS   = -I./obj   -fdefault-real-8 -J./obj -fimplicit-none -O3 -march=native 
+DFLAGS  = -I./obj  -fdefault-integer-8 -fdefault-real-8 -g -ggdb -fbounds-check -fbacktrace -fimplicit-none 
+LIBS    =  
+METIS   = $(HOME)/bin/ 
+MDFILES =   

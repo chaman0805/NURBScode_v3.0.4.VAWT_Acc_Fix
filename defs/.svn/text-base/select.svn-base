@@ -1,0 +1,33 @@
+##################################
+# System definitions
+##################################
+host = $(shell hostname)
+defs = default
+
+ifeq ($(host),machiatto)
+  defs = machiatto
+endif
+
+ifeq ($(host),tetship.ucsd.edu)
+  defs = tetship
+endif
+
+ifeq ($(host),tetwind.ucsd.edu)
+  defs = tetwind
+endif
+
+ifeq ($(findstring ranger,$(host)),ranger)
+  defs = ranger
+endif	
+
+ifeq ($(findstring ls,$(host)),ls)
+  defs = lonestar
+endif	
+
+ifeq ($(findstring MacBook,$(host)),MacBook)
+  defs = laptop
+endif
+
+ifeq ($(findstring dynamic.ucsd.edu,$(host)),dynamic.ucsd.edu)
+  defs = laptop
+endif

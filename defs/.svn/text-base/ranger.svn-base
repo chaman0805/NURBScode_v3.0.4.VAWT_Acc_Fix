@@ -1,0 +1,8 @@
+DEST    = $(WORK)/bin
+FCOMP   = mpif90
+FREE    = -free   
+FLAGS   = -r8 -i4 -zero -implicitnone -O2 -ipo -xO
+DFLAGS  =
+LIBS    =
+METIS   = /opt/apps/intel10_1/metis/4.0/ 
+MDFILES =    

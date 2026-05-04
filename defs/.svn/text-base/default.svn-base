@@ -1,0 +1,8 @@
+DEST    = ../bin
+FCOMP   = mpif90
+FREE    = -free
+FLAGS   = -r8 -i4 -zero -implicitnone -fast  -CB  
+DFLAGS  = -r8 -i4 
+LIBS    = -L${MKL_LIB} -llapack
+METIS   =/opt/local/bin/
+MDFILES =   

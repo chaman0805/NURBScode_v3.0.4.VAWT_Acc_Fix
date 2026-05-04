@@ -1,0 +1,24 @@
+*
+INPUT FILE: /home/artem/Research/code_shell_mat_v1.8_offshore/Sandia_Offshore/Mesh_Artem/sandia_5mw_Artem.nas
+*
+*
+Warning: Property with ID= 1 the referenced MID= 1 does not exist.
+Created default with the same ID.
+Warning: Property with ID= 2 the referenced MID= 3 does not exist.
+Created default with the same ID.
+Warning: Property with ID= 3 the referenced MID= 2 does not exist.
+Created default with the same ID.
+Warning: Property with ID= 21 the referenced MID= 5 does not exist.
+Created default with the same ID.
+Warning: Property with ID= 22 the referenced MID= 6 does not exist.
+Created default with the same ID.
+Warning: Property with ID= 23 the referenced MID= 7 does not exist.
+Created default with the same ID.
+Warning: Property with ID= 24 the referenced MID= 8 does not exist.
+Created default with the same ID.
+Warning: Property with ID= 31 the referenced MID= 31 does not exist.
+Created default with the same ID.
+Warning: Property with ID= 32 the referenced MID= 95 does not exist.
+Created default with the same ID.
+Warning: Property with ID= 33 the referenced MID= 92 does not exist.
+Created default with the same ID.

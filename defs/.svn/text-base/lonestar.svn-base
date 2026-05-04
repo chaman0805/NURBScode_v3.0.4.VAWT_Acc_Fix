@@ -1,0 +1,7 @@
+DEST    = $(HOME)/bin
+FCOMP   = mpif90 
+FREE    = -free     
+FLAGS   = -r8 -i4 -zero -implicitnone -ipo -ip -O3 -xSSE4.2
+DFLAGS  =
+LIBS    =
+MDFILES =  

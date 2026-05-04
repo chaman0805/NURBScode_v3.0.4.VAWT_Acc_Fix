@@ -1,0 +1,10 @@
+DEST    = /scratch/dancha/code/bin
+FCOMP   = mpif90  
+#FCOMP   = ifort
+FLAGS   = -O3 -g -pg -fbounds-check -fbacktrace -fimplicit-none -ffpe-trap=invalid,zero,overflow -fallow-argument-mismatch #for narval
+#FLAGS   = -O3 -g -pg -fbounds-check -fbacktrace -fimplicit-none -ffpe-trap=invalid,zero,overflow #for arc
+LIBS    = -L/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/openblascore/0.3.24/lib -lopenblas #for narval
+#LIBS    = -L/global/software/openblas/openblas-0.3.13-gnu831/lib -lopenblas #for arc
+METIS   = /opt/apps/intel13/metis/5.0.2/bin
+MDFILES = 
+
