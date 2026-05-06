@@ -119,6 +119,8 @@ subroutine shell_input_nrb(mNRB, NRB, NPATCH, NSD, maxP, maxQ, maxMCP, &
 
   ! find the node number for the tip
 
+  NRB%TipLoc = 1
+  NRB%TipLocTr = 1
 
 !   NRB%TipLoc = 640
 
