@@ -119,40 +119,29 @@ subroutine shell_input_nrb(mNRB, NRB, NPATCH, NSD, maxP, maxQ, maxMCP, &
 
   ! find the node number for the tip
 
-  NRB%TipLoc = 1
+  rtmp = sin(-deg)*NRB%B_NET_U(1,1) + cos(-deg)*NRB%B_NET_U(1,2)
+  xtmp = cos(-deg)*NRB%B_NET_U(1,1) - sin(-deg)*NRB%B_NET_U(1,2)
+  utmp = xtmp
+  NRB%TipLoc   = 1
   NRB%TipLocTr = 1
-
-!   NRB%TipLoc = 640
-
-!   NRB%TipLocTr = 73
-
-!    rtmp = sin(-deg)*NRB%B_NET_U(1,1) + cos(-deg)*NRB%B_NET_U(1,2)!Y location
- !   xtmp = cos(-deg)*NRB%B_NET_U(1,1) - sin(-deg)*NRB%B_NET_U(1,2) !X coordinate
-  !  NRB%TipLoc = 1
-   ! NRB%TipLocTr = 1
-    !do i = 1, NRB%NNODE
- !!     if(abs(sin(-deg)*NRB%B_NET_U(i,1) + cos(-deg)*NRB%B_NET_U(i,2) - rtmp) > 1.0d-4) then
-  !    if((sin(-deg)*NRB%B_NET_U(i,1) + cos(-deg)*NRB%B_NET_U(i,2)) > rtmp) then
-   !     NRB%TipLoc = i
-    !    NRB%TipLocTr = i
-     !   rtmp = sin(-deg)*NRB%B_NET_U(i,1) + cos(-deg)*NRB%B_NET_U(i,2)
-      !  xtmp = cos(-deg)*NRB%B_NET_U(i,1) - sin(-deg)*NRB%B_NET_U(i,2)
-       ! utmp = xtmp
-  !!    else if(abs(sin(-deg)*NRB%B_NET_U(i,1) + cos(-deg)*NRB%B_NET_U(i,2) -  rtmp) <= 1.0d-4)  then
-  !    else if((sin(-deg)*NRB%B_NET_U(i,1) + cos(-deg)*NRB%B_NET_U(i,2)) ==  rtmp) then
-  !!      if((cos(-deg)*NRB%B_NET_U(i,1) - sin(-deg)*NRB%B_NET_U(i,2) - xtmp) <= 1.0d-4) then
-    !    if((cos(-deg)*NRB%B_NET_U(i,1) - sin(-deg)*NRB%B_NET_U(i,2)) <= xtmp) then
-     !     NRB%TipLoc = i
-      !    rtmp = sin(-deg)*NRB%B_NET_U(i,1) + cos(-deg)*NRB%B_NET_U(i,2)
-       !   xtmp = cos(-deg)*NRB%B_NET_U(i,1) - sin(-deg)*NRB%B_NET_U(i,2)
-!        end if
- !       if(NRB%B_NET_U(i,1) > utmp) then
-  !        NRB%TipLocTr = i
-   !       rtmp = NRB%B_NET_U(i,2)
-    !      utmp = NRB%B_NET_U(i,1)
-     !   end if
-      !end if
- !   end do
+  do i = 1, NRB%NNODE
+    if ((sin(-deg)*NRB%B_NET_U(i,1) + cos(-deg)*NRB%B_NET_U(i,2)) > rtmp) then
+      NRB%TipLoc   = i
+      NRB%TipLocTr = i
+      rtmp = sin(-deg)*NRB%B_NET_U(i,1) + cos(-deg)*NRB%B_NET_U(i,2)
+      xtmp = cos(-deg)*NRB%B_NET_U(i,1) - sin(-deg)*NRB%B_NET_U(i,2)
+      utmp = xtmp
+    else if ((sin(-deg)*NRB%B_NET_U(i,1) + cos(-deg)*NRB%B_NET_U(i,2)) == rtmp) then
+      if ((cos(-deg)*NRB%B_NET_U(i,1) - sin(-deg)*NRB%B_NET_U(i,2)) <= xtmp) then
+        NRB%TipLoc = i
+        xtmp = cos(-deg)*NRB%B_NET_U(i,1) - sin(-deg)*NRB%B_NET_U(i,2)
+      end if
+      if (NRB%B_NET_U(i,1) > utmp) then
+        NRB%TipLocTr = i
+        utmp = NRB%B_NET_U(i,1)
+      end if
+    end if
+  end do
 
 !  write(*,*) "Leading edge Node Number (NRB)=", NRB%TipLoc, &
 !             NRB%B_NET_U(NRB%TipLoc,1:2), myid+1
